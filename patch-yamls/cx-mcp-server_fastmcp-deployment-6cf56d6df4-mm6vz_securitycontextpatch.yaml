@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastmcp-deployment-6cf56d6df4-mm6vz
+  namespace: cx-mcp-server
+spec:
+  template:
+    spec:
+      containers:
+      - name: <container-name>
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
