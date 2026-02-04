@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-mcp-84c4c5d987-rrj8r
+  namespace: k8s-mcp-server
+spec:
+  template:
+    spec:
+      containers:
+      - name: <container-name>
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
