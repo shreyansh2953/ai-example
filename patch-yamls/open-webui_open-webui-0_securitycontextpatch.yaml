@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: open-webui-0
+  namespace: open-webui
+spec:
+  template:
+    spec:
+      containers:
+      - name: <container-name>
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
