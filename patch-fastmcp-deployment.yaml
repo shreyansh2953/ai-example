@@ -1,0 +1,12 @@
+spec:
+  template:
+    spec:
+      containers:
+        - name: fastmcp-container
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
