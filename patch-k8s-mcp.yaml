@@ -1,0 +1,12 @@
+spec:
+  template:
+    spec:
+      containers:
+        - name: mcp-server-kubernetes
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
